@@ -1,4 +1,5 @@
 const express = require('express');
+require('./models/db')
 const app= express();
 const birds = require('./routes/birds')
 

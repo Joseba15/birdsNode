@@ -13,7 +13,12 @@ router.post('/',[
     validarCampos
 ], addUser );
 
-
+router.post('/login',[
+    
+    check('password', 'la contraseña es requerida').not().isEmpty(),
+    check('correo', 'El correo es requerido').not().isEmpty(),
+    validarCampos
+], addUser );
 
 
 

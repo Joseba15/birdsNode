@@ -2,7 +2,7 @@ const express = require('express');
 require('./models/db')
 const {dbConnection} = require('./database/config')
 const app= express();
-require('dotenv').config
+require('dotenv').config()
 const birds = require('./routes/birds')
 const user = require('./routes/user')
 

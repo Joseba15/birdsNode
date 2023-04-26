@@ -1,8 +1,9 @@
 const express = require('express')
 const router = express.Router()
-const {addUser} = require('../controllers/user')
+const {addUser,login,changeState} = require('../controllers/user')
 const { check } = require('express-validator')
 const { validarCampos } = require('../middlewares/validate-fields')
+const { validateJWT } = require('../middlewares/validate-jwt')
 
 
 router.post('/',[
@@ -18,8 +19,12 @@ router.post('/login',[
     check('password', 'la contraseña es requerida').not().isEmpty(),
     check('correo', 'El correo es requerido').not().isEmpty(),
     validarCampos
-], addUser );
+], login );
 
-
+router.delete('/:id', [
+    validateJWT,
+    check('nombre', 'El nombre es obligatorio').not().isEmpty(),
+    validarCampos
+],changeState)
 
 module.exports = router

@@ -1,6 +1,8 @@
 const {request, response} = require('express')
 const User = require('../models/user')
 const bcryptjs = require('bcryptjs')
+const { genJWT } = require('../helpers/genJWT')
+
 
 
 const addUser = async(req, res) => {
@@ -29,16 +31,26 @@ const addUser = async(req, res) => {
 
 }
 
-async function login(req, res)
-    let {email, password}= req.body;
+ const login = async(req=request, res=response) =>{
+    const { email, password} = req.body
     const user = await User.findone(email)
-    if(!user){
-        return res.status(400) .json( {mensage: 'El usuario no existe'})
-        if(validPassword){
-            return res.status(400).json({mensage: 'La contraseña no es correcta'})
-        }else{
-            res.json( (user))
-        }   
-    }
+    const validPassword = bcryptjs.compareSync(password, user.password) 
 
-module.exports = { addUser }
+    if(!user){
+        res.status(400) .json( {mensage: 'El usuario no existe'})
+    if(!validPassword){
+        return res.status(400).json({mensage: 'La contraseña no es correcta'})
+    }else{
+        const token = await genJWT(user._id);
+        res.json({user,token})
+    }   
+}
+}
+
+const changeState = async(req = request, res= response) => {
+    const id = req.params.id;
+    const user = await User.findByIdAndUpdate(id, {"state": false})
+    res.json({ user})
+}
+
+module.exports = { addUser,login,changeState }

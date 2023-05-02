@@ -3,12 +3,16 @@ const User = require('../models/user')
 const bcryptjs = require('bcryptjs')
 const { genJWT } = require('../helpers/genJWT')
 
-
+const getUsers= async(req,res) =>{
+    const { limit=5, skip=0} = req.query;
+    const users = await User.find({state: true}).limit(Number(limit)).skip(Number(skip))
+    res.json({ limit, skip, users})
+}
 
 const addUser = async(req, res) => {
 
-    const { name, email, password, rol} = req.body;
-    const user = new User({name, email, password, rol})
+    const { nombre, correo, password, rol} = req.body;
+    const user = new User({nombre, correo, password, rol})
     
     const existeEmail = await User.findOne({correo});
         if (existeEmail){
@@ -32,8 +36,8 @@ const addUser = async(req, res) => {
 }
 
  const login = async(req=request, res=response) =>{
-    const { email, password} = req.body
-    const user = await User.findone(email)
+    const { correo, password} = req.body
+    const user = await User.findOne(correo)
     const validPassword = bcryptjs.compareSync(password, user.password) 
 
     if(!user){
@@ -49,8 +53,9 @@ const addUser = async(req, res) => {
 
 const changeState = async(req = request, res= response) => {
     const id = req.params.id;
-    const user = await User.findByIdAndUpdate(id, {"state": false})
-    res.json({ user})
+    const user = req.user;
+    const userDelete = await User.findByIdAndUpdate(id, {"state": false})
+    res.json({ userDelete,user})
 }
 
-module.exports = { addUser,login,changeState }
+module.exports = { addUser,login,changeState,getUsers }

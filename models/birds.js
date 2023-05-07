@@ -3,16 +3,16 @@ const { Schema, model } = require('mongoose');
 const BirdsSchema = Schema({
     speciesCode: {
         type: String,
-        required: [true, 'El nombre es obligatorio'],
+        required: [true, 'El codigo es obligatorio'],
         unique: true
     },
     comName: {
         type: String,
-        required: [true, 'La descripción es obligatoria'],       
+        required: [true, 'El nombre comun es obligatoria'],       
     },
     sciName: {
         type: String,
-        required: [true, 'La graduación es obligatoria'],
+        required: [true, 'El nombre cientifico es obligatoria'],
     },
 });
 

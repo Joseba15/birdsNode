@@ -7,8 +7,14 @@ const Bird = require('../models/birds');
 
 //GET
 async function getBirds(req, res) {
-    const {comName } = req.query
-    const query = {comName}
+    const {comName,sciName} = req.query
+    const query = {comName,sciName}
+    
+    for (const key in query) {
+        if (query[key] === undefined) {
+            delete query[key];
+        }
+    }
     // const birds =  db.birds.find(query)
     const birds = await Bird.find(query)
     res.json(birds)

@@ -4,6 +4,7 @@ const {getBird,postBirds,getBirds,deleteBird,updateBird} = require('../controlle
 const { check } = require('express-validator')
 const { validarCampos } = require('../middlewares/validate-fields')
 const { validateJWT } = require('../middlewares/validate-jwt')
+const { hasRol } = require('../middlewares/validate-rol')
 
 
 router.get('/',getBirds);

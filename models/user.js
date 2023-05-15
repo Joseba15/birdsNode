@@ -18,6 +18,9 @@ const UserSchema = Schema({
         type: String,
         require: true,
         emun: ['ADMIN_ROLE', 'USER_ROLE']
+    },
+    img:{
+        type:String
     }
 })
 

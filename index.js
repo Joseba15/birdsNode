@@ -5,6 +5,9 @@ const app= express();
 require('dotenv').config()
 const birds = require('./routes/birds')
 const user = require('./routes/user')
+const upload= require('./routes/uploads')
+const fileUpload = require('express-fileupload');
+
 
 app.use(express.json());
 
@@ -12,6 +15,13 @@ async function connectAtlas(){
     await dbConnection()
 }
 connectAtlas()
+
+app.use(fileUpload({
+  useTempFiles : true,
+  tempFileDir : '/tmp/'
+}));
+
+
 
 app.use('/birds', birds)
 app.use('/user',user)

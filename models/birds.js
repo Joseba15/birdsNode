@@ -14,6 +14,9 @@ const BirdsSchema = Schema({
         type: String,
         required: [true, 'El nombre cientifico es obligatoria'],
     },
+    img:{
+        type:String
+    }
 });
 
 module.exports = model( 'Birds', BirdsSchema );

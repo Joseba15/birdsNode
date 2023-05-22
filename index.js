@@ -7,6 +7,8 @@ const birds = require('./routes/birds')
 const user = require('./routes/user')
 const upload= require('./routes/uploads')
 const fileUpload = require('express-fileupload');
+const cloudinary = require('cloudinary').v2;
+
 
 
 app.use(express.json());
@@ -22,9 +24,17 @@ app.use(fileUpload({
 }));
 
 
+// Configuration 
+cloudinary.config({
+  cloud_name: "ddhrew5cw",
+  api_key: "316372844593531",
+  api_secret: "97Osw2pioq7RvaH6aqswrre0TZg"
+});
+
 
 app.use('/birds', birds)
 app.use('/user',user)
+app.use('/upload',upload)
 
 
 app.listen(process.env.PORT);

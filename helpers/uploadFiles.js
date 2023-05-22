@@ -15,13 +15,15 @@ const uploadFile = (files, validExtensions = ['png', 'jpg', 'jpeg', 'gif'], fold
 
         const tempName = uuidv4() + '.' + extension;
         const uploadPath = path.join( __dirname, '../uploads/', folder, tempName);
+        cloudinary.uploader.upload( uploadPath, {public_id: "id1"})
+
 
         file.mv(uploadPath, (err) => {
             if (err) {
                 reject(err);
             }
 
-            resolve( tempName );
+            resolve(tempName);
         });
 
     });

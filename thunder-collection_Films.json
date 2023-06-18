@@ -1,0 +1,323 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Films",
+    "dateExported": "2023-06-12T22:37:58.690Z",
+    "version": "1.1",
+    "folders": [
+        {
+            "_id": "068ebe90-67fa-4bae-93ef-ca3e160ac30e",
+            "name": "film",
+            "containerId": "",
+            "created": "2023-06-12T21:45:13.791Z",
+            "sortNum": 10000
+        },
+        {
+            "_id": "31663a03-1ee8-4ab6-af88-72fab589b8cf",
+            "name": "user",
+            "containerId": "",
+            "created": "2023-06-12T21:45:13.792Z",
+            "sortNum": 20000
+        },
+        {
+            "_id": "b5f7dc8e-6ce4-4313-9ec5-896626dc09fe",
+            "name": "productor",
+            "containerId": "",
+            "created": "2023-06-12T21:45:13.793Z",
+            "sortNum": 30000
+        }
+    ],
+    "requests": [
+        {
+            "_id": "6ba44f75-fe3d-44b4-b444-52334e213344",
+            "colId": "9a4ae81a-e00a-4117-bb31-61a700753800",
+            "containerId": "068ebe90-67fa-4bae-93ef-ca3e160ac30e",
+            "name": "get films",
+            "url": "http://localhost:8000/film",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-06-12T21:45:13.791Z",
+            "modified": "2023-06-12T21:45:13.791Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "e82bec1e-6f2b-4122-b58b-ec8c733bd6ca",
+            "colId": "9a4ae81a-e00a-4117-bb31-61a700753800",
+            "containerId": "068ebe90-67fa-4bae-93ef-ca3e160ac30e",
+            "name": "get film",
+            "url": "http://localhost:8000/film/6475b3049e0120db6b1dc840",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-06-12T21:45:13.792Z",
+            "modified": "2023-06-12T21:45:13.792Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "9f08d5de-a34f-4f20-bc4b-31464bc17260",
+            "colId": "9a4ae81a-e00a-4117-bb31-61a700753800",
+            "containerId": "068ebe90-67fa-4bae-93ef-ca3e160ac30e",
+            "name": "get film error",
+            "url": "http://localhost:8000/film/6475b3049e0120db6b1dc876",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-06-12T21:45:13.793Z",
+            "modified": "2023-06-12T21:45:13.793Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "f511af39-883c-4f25-b60f-7a5107ae55e2",
+            "colId": "9a4ae81a-e00a-4117-bb31-61a700753800",
+            "containerId": "b5f7dc8e-6ce4-4313-9ec5-896626dc09fe",
+            "name": "get productor",
+            "url": "http://localhost:8000/productor/647eee39ef87c6acaca112f4",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2023-06-12T21:45:13.794Z",
+            "modified": "2023-06-12T21:45:13.794Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "21f05a8b-b371-41d6-b491-7db95adf1633",
+            "colId": "9a4ae81a-e00a-4117-bb31-61a700753800",
+            "containerId": "31663a03-1ee8-4ab6-af88-72fab589b8cf",
+            "name": "signup",
+            "url": "http://localhost:8000/user/signup",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2023-06-12T21:45:13.795Z",
+            "modified": "2023-06-12T22:13:37.067Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombre\":\"joseba\",\n  \"correo\":\"joseba@gmail.com\",\n  \"password\":\"joseba123\",\n  \"rol\":\"ADMIN_ROLE\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "0d6742a7-6880-4b25-864f-79326c8d1f8f",
+            "colId": "9a4ae81a-e00a-4117-bb31-61a700753800",
+            "containerId": "068ebe90-67fa-4bae-93ef-ca3e160ac30e",
+            "name": "post film",
+            "url": "http://localhost:8000/film",
+            "method": "POST",
+            "sortNum": 50000,
+            "created": "2023-06-12T21:45:13.796Z",
+            "modified": "2023-06-12T21:45:13.796Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \n      \"title\": \"hola mundo\",\n      \"country\": \"Spain\",\n      \"duration\": 121,\n      \"genre\": \"Drama\",\n      \"productores\": \"647eee39ef87c6acaca112f4\"\n     \n      \n    \n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "5a6905fb-83a9-4e9d-823f-345bf092e04c",
+            "colId": "9a4ae81a-e00a-4117-bb31-61a700753800",
+            "containerId": "b5f7dc8e-6ce4-4313-9ec5-896626dc09fe",
+            "name": "get productores",
+            "url": "http://localhost:8000/productor",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2023-06-12T21:45:13.797Z",
+            "modified": "2023-06-12T21:45:13.797Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "32ac327a-d1e2-4f70-8831-2e81a19ce665",
+            "colId": "9a4ae81a-e00a-4117-bb31-61a700753800",
+            "containerId": "068ebe90-67fa-4bae-93ef-ca3e160ac30e",
+            "name": "delete film",
+            "url": "http://localhost:8000/film/6475b3049e0120db6b1dc840",
+            "method": "DELETE",
+            "sortNum": 70000,
+            "created": "2023-06-12T21:45:13.798Z",
+            "modified": "2023-06-12T21:45:13.798Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "7a6b4f3e-a581-4485-8da5-12adb7ee41ff",
+            "colId": "9a4ae81a-e00a-4117-bb31-61a700753800",
+            "containerId": "068ebe90-67fa-4bae-93ef-ca3e160ac30e",
+            "name": "put film",
+            "url": "http://localhost:8000/film/6475b3049e0120db6b1dc842",
+            "method": "PUT",
+            "sortNum": 80000,
+            "created": "2023-06-12T21:45:13.799Z",
+            "modified": "2023-06-12T21:45:13.799Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n      \n      \"title\": \"hola mundo \",\n      \"country\": \"Croatia\",\n      \"duration\": 78,\n      \"gender\": \"Comedy|Horror|Mystery\"\n    }",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "e760860b-ae78-433b-8bc7-aa4780f92192",
+            "colId": "9a4ae81a-e00a-4117-bb31-61a700753800",
+            "containerId": "31663a03-1ee8-4ab6-af88-72fab589b8cf",
+            "name": "login",
+            "url": "http://localhost:8000/user/login",
+            "method": "POST",
+            "sortNum": 80000,
+            "created": "2023-06-12T22:08:19.993Z",
+            "modified": "2023-06-12T22:18:13.547Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"correo\":\"joseba@gmail.com\",\n  \"password\":\"$2a$10$IHGwFnULbWx3yL86lh0f5.W9HZZutb4l6xi7jxhTZGzVwj8C1B7Yi\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "2c3b11b3-1284-4d66-aa0b-8bd1bcb8da76",
+            "colId": "9a4ae81a-e00a-4117-bb31-61a700753800",
+            "containerId": "b5f7dc8e-6ce4-4313-9ec5-896626dc09fe",
+            "name": "post productores",
+            "url": "http://localhost:8000/productor",
+            "method": "POST",
+            "sortNum": 90000,
+            "created": "2023-06-12T21:45:13.800Z",
+            "modified": "2023-06-12T21:45:13.800Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": " {\n      \n      \"name\": \"DC comic\",\n      \"address\": \"15 Fuller Drive\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "93a77e15-424e-4ff4-bc37-96b5522e4394",
+            "colId": "9a4ae81a-e00a-4117-bb31-61a700753800",
+            "containerId": "b5f7dc8e-6ce4-4313-9ec5-896626dc09fe",
+            "name": "put productores",
+            "url": "http://localhost:8000/productor/647eee39ef87c6acaca112f4",
+            "method": "PUT",
+            "sortNum": 100000,
+            "created": "2023-06-12T21:45:13.801Z",
+            "modified": "2023-06-12T21:45:13.801Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n      \n      \"name\": \"marvel\",\n      \"address\": \"15 Fuller Drive\"\n    \n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "bf601c39-ee32-4869-a129-7dc1d4394336",
+            "colId": "9a4ae81a-e00a-4117-bb31-61a700753800",
+            "containerId": "b5f7dc8e-6ce4-4313-9ec5-896626dc09fe",
+            "name": "delete productores",
+            "url": "http://localhost:8000/productor/647eee39ef87c6acaca112f4",
+            "method": "DELETE",
+            "sortNum": 110000,
+            "created": "2023-06-12T21:45:13.802Z",
+            "modified": "2023-06-12T21:45:13.802Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "15d6da36-e904-432d-8851-03ea3bcc002e",
+            "colId": "9a4ae81a-e00a-4117-bb31-61a700753800",
+            "containerId": "31663a03-1ee8-4ab6-af88-72fab589b8cf",
+            "name": "get user",
+            "url": "http://localhost:8000/user",
+            "method": "GET",
+            "sortNum": 120000,
+            "created": "2023-06-12T22:02:57.127Z",
+            "modified": "2023-06-12T22:06:16.934Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "fab43385-a527-4365-89de-eb3ed822ab3d",
+            "colId": "9a4ae81a-e00a-4117-bb31-61a700753800",
+            "containerId": "31663a03-1ee8-4ab6-af88-72fab589b8cf",
+            "name": "put user",
+            "url": "http://localhost:8000/user/648795f33da59331c72b225e",
+            "method": "PUT",
+            "sortNum": 140000,
+            "created": "2023-06-12T22:32:15.957Z",
+            "modified": "2023-06-12T22:35:32.090Z",
+            "headers": [
+                {
+                    "name": "Content-Type",
+                    "value": "application/json"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": " {\n      \"nombre\": \"pepe2\",\n      \"correo\": \"pepe2@gmail.com\",\n      \"password\":\"pepito2\",\n      \"rol\": \"USER_ROLE\"\n      \n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "f88bd2e3-2ff2-4874-8086-b4dd3b4ea42b",
+            "colId": "9a4ae81a-e00a-4117-bb31-61a700753800",
+            "containerId": "31663a03-1ee8-4ab6-af88-72fab589b8cf",
+            "name": "delete user",
+            "url": "",
+            "method": "GET",
+            "sortNum": 150000,
+            "created": "2023-06-12T22:37:52.550Z",
+            "modified": "2023-06-12T22:37:52.550Z",
+            "headers": []
+        }
+    ]
+}
